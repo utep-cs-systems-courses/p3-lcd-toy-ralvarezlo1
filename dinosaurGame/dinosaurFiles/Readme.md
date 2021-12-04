@@ -1,18 +1,5 @@
-# 1_shape_demo
+# Dinasour Game
 
-This is a simple shape drawing demo. It shows how to draw a few simple
-shapes. It contains the following files:
-
-* shape_demo.c the driver code that calls the shape drawing functions
-* draw_shapes.c contains the functions that draw the shapes
-
-A triangle is drawn by drawing a series of lines, with each line being wider
-than the previous line
-
-The circle uses Bresenham's algorithm, for reference:
-
-https://iq.opengenus.org/bresenhams-circle-drawing-algorithm/
-
-https://www.javatpoint.com/computer-graphics-bresenhams-circle-algorithm
-
-https://arcade.makecode.com/graphics-math/bresenham-circle
+This is a simple game based on the Google Chrome game. It shows a dinasour and
+a cactus. The idea is to make the dinasour jump to avoid hitting the cactus;
+if the dinasour hits the cactus, the game stops and a circle is displayed.

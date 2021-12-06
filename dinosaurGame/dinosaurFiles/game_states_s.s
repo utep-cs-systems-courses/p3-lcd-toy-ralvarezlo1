@@ -10,16 +10,15 @@ mute:
 	.text
 	.extern switch_state_down
 	.extern highscore
-	.extern score
+	;; .extern score
 	.extern dinosaur_jump
 	.extern dinosaur_down
 	.extern playing
-	.extern din1
-	.extern buzzer_set_period
-	.extern freq1
-	.extern play_track
+	;; .extern din1
+	;; .extern buzzer_set_period
+	;; .extern freq1
+	;; .extern play_track
 	.extern continue_game
-
 jt:
 	.word default
 	.word case_1
@@ -33,7 +32,7 @@ game_controls:
 				; verify the range is not greater than 5
 	mov #0x05, r13
 	cmp &switch_state_down, r13
-	jc default
+	jnc default
 				; indexing to jump table
 	mov &switch_state_down, r12
 	add r12, r12 		; double for word size (2 bytes)
@@ -86,7 +85,6 @@ default:			; continue
 ;; play_song:
 				; play the song of the game
 	;; call play_track
-	call continue_game
-	jmp end_switch
+	call #continue_game
 end_switch:			; implicit return
 	pop r0

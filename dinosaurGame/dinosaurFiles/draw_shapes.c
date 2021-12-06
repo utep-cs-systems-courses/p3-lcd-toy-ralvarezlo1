@@ -196,13 +196,13 @@ bit 0x8000 starts left;  therefore bit >>= 1
 /* handles the dinasour, updates its position and draws it in its new location */
 void moving_dinosaur(void)
 {
-  din1.old_dy = din1.dy;
-  if (din1.dy >= LONG_EDGE_PIXELS - 32) {
+  if (din1.dy <= LONG_EDGE_PIXELS - 80) { //80
     din1.up = 0;
-  } else if (din1.dy <= LONG_EDGE_PIXELS - 80) {
+  } else if (din1.dy == LONG_EDGE_PIXELS - 32) { //128
     din1.up = 1;
   }
-  if (din1.up == 1) {
+  din1.old_dy = din1.dy;
+  if (din1.up == 0) {
     if (dinosaur_down && din1.dy < 120) {
       din1.dy+= 8;
     } else {
